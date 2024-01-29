@@ -12,92 +12,96 @@
 <body>
 
   <div id="app" class="container">
-    <h1>Minha Rotina Semanal</h1>
+    <h1>Aulas da Semana</h1>
 
     <div class="day">
       <h2>Segunda-feira</h2>
-      <ul id="monday" class="activities"></ul>
+      <ul id="Monday" class="activities"></ul>
       <input type="text" id="activityInputMonday" placeholder="Atividade">
       <input type="number" id="hoursInputMonday" placeholder="Horas">
-      <button onclick="addActivity('monday')">Adicionar</button>
-      <button onclick="resetDay('monday')">Reiniciar</button>
+      <input type="number" id="valueInputMonday" placeholder="Valor por hora (R$)"> <!-- Adicione esta linha -->
+      <button onclick="addActivity('Monday')">Adicionar</button>
+      <button onclick="resetDay('Monday')">Reiniciar</button>
       <p>Total de horas: <span id="totalHoursMonday">0</span></p>
+      <p>Total de custo: <span id="totalCostMonday">R$0.00</span></p> <!-- Adicione esta linha -->
     </div>
 
     <div class="day">
       <h2>Terça-feira</h2>
-      <ul id="tuesday" class="activities"></ul>
+      <ul id="Tuesday" class="activities"></ul>
       <input type="text" id="activityInputTuesday" placeholder="Atividade">
       <input type="number" id="hoursInputTuesday" placeholder="Horas">
-      <button onclick="addActivity('tuesday')">Adicionar</button>
-      <button onclick="resetDay('tuesday')">Reiniciar</button>
+      <input type="number" id="valueInputTuesday" placeholder="Valor por hora (R$)"> <!-- Adicione esta linha -->
+      <button onclick="addActivity('Tuesday')">Adicionar</button>
+      <button onclick="resetDay('Tuesday')">Reiniciar</button>
       <p>Total de horas: <span id="totalHoursTuesday">0</span></p>
+      <p>Total de custo: <span id="totalCostTuesday">R$0.00</span></p> <!-- Adicione esta linha -->
     </div>
-
+    
     <div class="day">
       <h2>Quarta-feira</h2>
-      <ul id="Wednesday " class="activities"></ul>
-      <input type="text" id="activityInputWednesday " placeholder="Atividade">
-      <input type="number" id="hoursInputWednesday " placeholder="Horas">
-      <button onclick="addActivity('Wednesday ')">Adicionar</button>
-      <button onclick="resetDay('Wednesday ')">Reiniciar</button>
-      <p>Total de horas: <span id="totalHoursWednesday ">0</span></p>
+      <ul id="Wednesday" class="activities"></ul>
+      <input type="text" id="activityInputWednesday" placeholder="Atividade">
+      <input type="number" id="hoursInputWednesday" placeholder="Horas">
+      <input type="number" id="valueInputWednesday" placeholder="Valor por hora (R$)"> <!-- Adicione esta linha -->
+      <button onclick="addActivity('Wednesday')">Adicionar</button>
+      <button onclick="resetDay('Wednesday')">Reiniciar</button>
+      <p>Total de horas: <span id="totalHoursWednesday">0</span></p>
+      <p>Total de custo: <span id="totalCostWednesday">R$0.00</span></p> <!-- Adicione esta linha -->
     </div>
-
+    
     <div class="day">
       <h2>Quinta-feira</h2>
       <ul id="Thursday" class="activities"></ul>
       <input type="text" id="activityInputThursday" placeholder="Atividade">
       <input type="number" id="hoursInputThursday" placeholder="Horas">
+      <input type="number" id="valueInputThursday" placeholder="Valor por hora (R$)"> <!-- Adicione esta linha -->
       <button onclick="addActivity('Thursday')">Adicionar</button>
       <button onclick="resetDay('Thursday')">Reiniciar</button>
       <p>Total de horas: <span id="totalHoursThursday">0</span></p>
+      <p>Total de custo: <span id="totalCostThursday">R$0.00</span></p> <!-- Adicione esta linha -->
     </div>
-
+    
     <div class="day">
       <h2>Sexta-feira</h2>
       <ul id="Friday" class="activities"></ul>
       <input type="text" id="activityInputFriday" placeholder="Atividade">
       <input type="number" id="hoursInputFriday" placeholder="Horas">
+      <input type="number" id="valueInputFriday" placeholder="Valor por hora (R$)"> <!-- Adicione esta linha -->
       <button onclick="addActivity('Friday')">Adicionar</button>
       <button onclick="resetDay('Friday')">Reiniciar</button>
       <p>Total de horas: <span id="totalHoursFriday">0</span></p>
+      <p>Total de custo: <span id="totalCostFriday">R$0.00</span></p> <!-- Adicione esta linha -->
     </div>
-
+    
     <div class="day">
       <h2>Sábado</h2>
       <ul id="Saturday" class="activities"></ul>
       <input type="text" id="activityInputSaturday" placeholder="Atividade">
       <input type="number" id="hoursInputSaturday" placeholder="Horas">
+      <input type="number" id="valueInputSaturday" placeholder="Valor por hora (R$)"> <!-- Adicione esta linha -->
       <button onclick="addActivity('Saturday')">Adicionar</button>
       <button onclick="resetDay('Saturday')">Reiniciar</button>
       <p>Total de horas: <span id="totalHoursSaturday">0</span></p>
+      <p>Total de custo: <span id="totalCostSaturday">R$0.00</span></p> <!-- Adicione esta linha -->
     </div>
-
+    
     <div class="day">
       <h2>Domingo</h2>
       <ul id="Sunday" class="activities"></ul>
       <input type="text" id="activityInputSunday" placeholder="Atividade">
       <input type="number" id="hoursInputSunday" placeholder="Horas">
+      <input type="number" id="valueInputSunday" placeholder="Valor por hora (R$)"> <!-- Adicione esta linha -->
       <button onclick="addActivity('Sunday')">Adicionar</button>
       <button onclick="resetDay('Sunday')">Reiniciar</button>
       <p>Total de horas: <span id="totalHoursSunday">0</span></p>
+      <p>Total de custo: <span id="totalCostSunday">R$0.00</span></p> <!-- Adicione esta linha -->
     </div>
 
-  </div>
+    <p id="total">Total Geral: <span id="totalAllDays">R$0.00</span></p>
+    <button onclick="updateTotalCost()">Atualizar</button>
 
-  <!-- Adicione a seguinte seção ao final da estrutura HTML existente -->
-    <div class="day">
-    <h2>Despesas da Semana</h2>
-    <ul id="expenses" class="expenses"></ul>
-    <input type="text" id="expenseDescription" placeholder="Descrição da Despesa">
-    <input type="number" id="expenseAmount" placeholder="Valor (R$)">
-    <button onclick="addExpense()">Adicionar Despesa</button>
-    <button onclick="resetExpenses()">Reiniciar Despesas</button>
-    <p>Total de Despesas: <span id="totalExpenses">0</span> R$</p>
-  </div>
-  
-  
+  </div> 
 
   <script src="script.js"></script>
 </body>
